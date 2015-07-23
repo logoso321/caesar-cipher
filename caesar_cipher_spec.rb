@@ -1,13 +1,11 @@
 require "./caesar_cipher"
-describe Cipher do
+	
+describe "caesar_cipher" do
+	it "translates one word" do
+		caesar_cipher("What", 5).should == "Bmfy"
+	end
 
-	before do
-    	@cipher = Cipher.new
-    end
-
-	describe "add" do
-		it "adds 1+1" do
-		    @cipher.add(1,1).should == 2
-		end
+	it "translates multiple words" do
+		caesar_cipher("What a string!", 5).should == "Bmfy f xywnsl!"
 	end
 end
